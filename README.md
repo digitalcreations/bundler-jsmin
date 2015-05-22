@@ -19,10 +19,8 @@ or in `composer.json`
 ## Setup
 
 This package depends on `dc/router`, but strongly suggests `dc/ioc`. This is how you register the transformer with
-the IoC container so it is picked up automatically.
+the IoC container so it is picked up automatically:
 
 ```php
-$container
-    ->register('\DC\Bundler\JSMin\JSMinTransformer')
-    ->to('\DC\Bundler\ITransformer');
+\DC\Bundler\JSMin\JSMinTransformer::registerWithContainer($container);
 ```

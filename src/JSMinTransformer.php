@@ -27,4 +27,18 @@ class JSMinTransformer implements \DC\Bundler\ITransformer {
     {
         return "application/javascript";
     }
+
+    /**
+     * @inheritdoc
+     */
+    function runInDebugMode()
+    {
+        return false;
+    }
+
+    public static function registerWithContainer(\DC\IoC\Container $container) {
+        $container
+            ->register('\DC\Bundler\JSMin\JSMinTransformer')
+            ->to('\DC\Bundler\ITransformer');
+    }
 }
